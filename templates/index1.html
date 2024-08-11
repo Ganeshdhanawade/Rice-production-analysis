@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Output</title>
+    <style>
+        body {
+            /* background-image: url(https://cdn.pixabay.com/photo/2018/01/04/01/45/vietnam-3059651_960_720.jpg); */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: #757F9A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+            color: #006400;
+        }
+
+        h2 {
+            font-size: 24px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #006400;
+            text-align: center;
+        }
+
+        header h3 {
+            font-size: 18px;
+            margin: 5px 0 0;
+            color: #006400;
+        }
+
+        .my-cta-button {
+            background-color: #28a745;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .my-cta-button:hover {
+            background-color: #218838;
+        }
+
+        .ml-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        .form-input {
+            width: 95%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #000;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .my-cta-button {
+                font-size: 16px;
+            }
+
+            .ml-container {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script>
+        function show(id, visibility) {
+            document.getElementById(id).style.display = visibility;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1><b>Prediction of Gross Output and Harvesting Cost</b></h1>
+    </header>
+
+    <h2>Your gross yield is: <mark>{{ prediction0 }}</mark> Kg</h2>
+    <h2>Your harvesting cost is: <mark>{{ prediction1 }}</mark> Rs</h2>
+
+    <h2 style="font-size: 18px; background-color: rgba(255, 255, 255, 0.8); text-align: center; padding: 10px; border-radius: 10px;">
+        Are you interested in production price in rice? If yes, click the button below
+    </h2>
+    
+    <h3>
+        <button type="button" class="my-cta-button" onclick="show('all', 'block');">Click Here</button>
+    </h3>
+
+    <div class="ml-container" id="all">
+        <h2 style="font-size: 20px; background-color: rgba(172, 237, 240, 0.9); margin-bottom: 15px; padding: 10px; border-radius: 10px;">Please fill in some more information</h2>
+        <form action="/price" method="POST">
+            <input class="form-input" type="text" name="price_seed" placeholder="Seed Price(/Kg) e.g., 40 to 375" required><br>
+            <input class="form-input" type="text" name="wage" placeholder="Labor wage(/hrs) e.g., 30 to 175" required><br>
+            <input class="form-input" type="text" name="price_phos" placeholder="Price in Phosphate(/Kg) e.g., 60 to 120" required><br>
+            <input class="form-input" type="text" name="price_urea" placeholder="Price in Urea(/Kg) e.g., 50 to 100" required><br>
+
+            <input id="last" type="submit" class="my-cta-button" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
