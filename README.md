@@ -97,7 +97,7 @@ To deploy this project on [render](https://dashboard.render.com/)
 
 Below is the domo for created application
 
-![rice (1)](https://user-images.githubusercontent.com/109405138/210094280-ded72b7d-801c-4999-8d1c-e0c0f00192d6.gif)
+![rice (1)](https://github.com/hiteshverse/Rice-production-analysis/blob/main/templates/project-demo.gif)
 
 
 ## Live demo
