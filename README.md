@@ -54,17 +54,34 @@ Here is the report for PowerBI
   Pip install requrement.txt
 ```
 ```bash
-  Flask==1.1.1
+click==8.1.7
+colorama==0.4.6
+contourpy==1.1.1
+cycler==0.12.1
+Flask==1.1.1
+fonttools==4.53.1
 gunicorn==19.9.0
+importlib_resources==6.4.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
+joblib==1.4.2
+kiwisolver==1.4.5
 MarkupSafe==1.1.1
+matplotlib==3.6.3
+numpy==1.19.5
+packaging==24.1
+pandas==1.4.4
+pillow==10.4.0
+pyparsing==3.1.2
+python-dateutil==2.9.0.post0
+pytz==2024.1
+scikit-learn==1.1.1
+scipy==1.10.1
+six==1.16.0
+threadpoolctl==3.5.0
+tzdata==2024.1
 Werkzeug==0.15.5
-numpy>=1.9.2
-scipy>=0.15.1
-scikit-learn>=0.18
-matplotlib>=1.4.3
-pandas>=0.19
+zipp==3.19.2
 
 ```
 ## Deployment
@@ -86,7 +103,7 @@ Below is the domo for created application
 ## Live demo
 Below is the link for live demo
 
-https://rice-production-analysis-api.onrender.com/
+https://rice-production-analysis.onrender.com
 
 
 ## Learning Objective
